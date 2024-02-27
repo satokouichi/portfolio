@@ -72,6 +72,6 @@ npm -v
 npm install
 
 # npm 再インストール
-npm cache clean -f
+npm cache clean --force
 rm -rf node_modules
 npm install
