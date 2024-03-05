@@ -24,6 +24,9 @@ services:
                 - PHPFPM_VERSION=${PHPFPM_VERSION}
                 - COMPOSER_VERSION=${COMPOSER_VERSION}
                 - NODEJS_VERSION_MAJOR=${NODEJS_VERSION_MAJOR}
+                - XDEBUG_VERSION=${XDEBUG_VERSION}
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
         ports:
             - "${VITE_PORT}:5173"
         volumes:
