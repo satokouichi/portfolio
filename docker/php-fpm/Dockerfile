@@ -3,6 +3,11 @@ FROM php:${PHPFPM_VERSION}-fpm
 
 COPY ./php.ini /usr/local/etc/php/
 
+# XDEBUG
+ARG XDEBUG_VERSION
+RUN pecl install xdebug-${XDEBUG_VERSION}
+RUN docker-php-ext-enable xdebug
+
 # BASE
 RUN apt -y update
 RUN apt install -y zip unzip libxrender1 libfontconfig libxext-dev libzip-dev libicu-dev
